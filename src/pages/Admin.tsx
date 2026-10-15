@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
-import { Lock, LogOut, Upload, Trash2, ExternalLink, Loader2, Save } from 'lucide-react'
-import {
-  supabase,
-  isSupabaseConfigured,
-  adminEmail,
-  uploadDocument,
-  setLink,
-  removeContent,
-} from '../lib/supabase'
-import { useContent } from '../lib/content'
-import { adminGroups } from '../data/adminSlots'
-import type { AdminSlot } from '../data/adminSlots'
+import { ExternalLink, Loader2, Lock, LogOut, Save, Trash2, Upload } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { useToast } from '../components/ToastProvider'
+import type { AdminSlot } from '../data/adminSlots'
+import { adminGroups } from '../data/adminSlots'
+import { useContent } from '../lib/content'
+import {
+    adminEmail,
+    isSupabaseConfigured,
+    removeContent,
+    setLink,
+    supabase,
+    uploadDocument,
+} from '../lib/supabase'
 
 export default function Admin() {
   const [session, setSession] = useState<Session | null>(null)

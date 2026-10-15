@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { useState } from 'react'
 import { site } from '../data/siteContent'
 
 interface HeroArtworkProps {

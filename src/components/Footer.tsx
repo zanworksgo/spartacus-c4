@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Lock } from 'lucide-react'
 import { site } from '../data/siteContent'
 
 export default function Footer() {
@@ -11,8 +10,8 @@ export default function Footer() {
           to="/admin"
           className="inline-flex items-center gap-1 text-xs font-medium text-ink/40 transition-colors hover:text-green-900"
         >
-          <Lock size={12} aria-hidden="true" />
-          Admin
+          {/* <Lock size={12} aria-hidden="true" /> */}
+          {/* Admin */}
         </Link>
       </div>
     </footer>

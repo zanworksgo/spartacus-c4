@@ -1,12 +1,12 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import Navbar from './components/Navbar'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 import ScrollManager from './components/ScrollManager'
+import Admin from './pages/Admin'
 import Home from './pages/Home'
 import Profil from './pages/Profil'
 import Sejarah from './pages/Sejarah'
-import Admin from './pages/Admin'
 
 function Page({ children }: { children: React.ReactNode }) {
   const reduce = useReducedMotion()

@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import type { ReactNode } from 'react'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 
 interface RevealProps {

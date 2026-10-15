@@ -1,5 +1,5 @@
-import { site } from '../data/siteContent'
 import { Reveal, RevealItem } from '../components/Reveal'
+import { site } from '../data/siteContent'
 
 export default function Profil() {
   const { profil } = site

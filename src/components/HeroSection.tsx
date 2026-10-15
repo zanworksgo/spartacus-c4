@@ -1,6 +1,6 @@
 import { ArrowDown } from 'lucide-react'
-import { motion, useReducedMotion } from 'motion/react'
 import type { Variants } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import { site } from '../data/siteContent'
 import HeroArtwork from './HeroArtwork'
 

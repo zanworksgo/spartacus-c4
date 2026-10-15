@@ -51,6 +51,12 @@ export interface Champion {
     name: string | null
 }
 
+export interface ChampionGroup {
+    /** School level, e.g. "SMA/SMK/MA" or "SMP/MTs". */
+    level: string
+    champions: Champion[]
+}
+
 export interface ChapterItem {
     chapter: string
     label: string
@@ -62,6 +68,8 @@ export interface ChapterItem {
     pamphletKey?: string
     /** Overall champions (juara umum 1-3). */
     champions?: Champion[]
+    /** Champions split per level (overrides `champions` when present). */
+    championGroups?: ChampionGroup[]
     /** Teaser card for the upcoming chapter. */
     teaser?: boolean
     teaserText?: string
@@ -78,12 +86,11 @@ export interface ContactPerson {
 
 export const site = {
     identity: {
-        unitLabel: 'PASKIBRA SMANSA 101',
+        unitLabel: 'PASKIBRA UNIT 101 SMA NEGERI 1 JENEPONTO',
         name: 'SPARTACUS',
         chapter: 'CHAPTER 4',
-        tagline: 'Lomba Paskibra Antar Sekolah se-Sulawesi Selatan',
-        acronym: 'Semangat Paskibra Tangguh, Cerdas, Unggul, dan Sportivitas',
-        organizer: 'Paskibra Unit 101 SMA Negeri 1 Jeneponto',
+        tagline: 'Semangat Paskibra Tangguh, Cerdas, Unggul, dan Sportivitas',
+        // organizer: 'Paskibra Unit 101 SMA Negeri 1 Jeneponto',
     },
 
     assets: {
@@ -94,7 +101,7 @@ export const site = {
     },
 
     nav: [
-        { label: 'Beranda', href: '/' },
+        { label: 'Beranda', href: '/#' },
         { label: 'Profil', href: '/profil' },
         { label: 'Sejarah', href: '/sejarah' },
         { label: 'Kontak', href: '/#kontak' },
@@ -200,10 +207,23 @@ export const site = {
                 date: '04 - 09 Januari 2026',
                 pamphlet: null,
                 pamphletKey: 'pamflet-ch3',
-                champions: [
-                    { rank: 1, name: 'SMA Negeri 2 Gowa' },
-                    { rank: 2, name: 'SMA Negeri 2 Jeneponto' },
-                    { rank: 3, name: 'SMK Negeri 2 Gowa' },
+                championGroups: [
+                    {
+                        level: 'SMA/SMK/MA',
+                        champions: [
+                            { rank: 1, name: 'SMA Negeri 2 Gowa' },
+                            { rank: 2, name: 'SMA Negeri 2 Jeneponto' },
+                            { rank: 3, name: 'SMK Negeri 2 Gowa' },
+                        ],
+                    },
+                    {
+                        level: 'SMP/MTs',
+                        champions: [
+                            { rank: 1, name: null },
+                            { rank: 2, name: null },
+                            { rank: 3, name: null },
+                        ],
+                    },
                 ],
             },
             {

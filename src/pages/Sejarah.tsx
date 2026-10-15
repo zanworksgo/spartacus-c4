@@ -1,11 +1,28 @@
-import { Calendar, ImageOff, Trophy, Flag } from 'lucide-react'
+import { Calendar, Flag, ImageOff, Trophy } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Reveal, RevealItem } from '../components/Reveal'
-import type { ChapterItem } from '../data/siteContent'
+import type { ChapterItem, Champion } from '../data/siteContent'
 import { site } from '../data/siteContent'
 import { useResolvedUrl } from '../lib/content'
 
 const medalColor = ['bg-[#F4C752] text-green-900', 'bg-[#CBD3CE] text-green-900', 'bg-[#CFA06A] text-cream']
+
+function Podium({ champions }: { champions: Champion[] }) {
+  return (
+    <ul className="mt-2 flex flex-col gap-2">
+      {champions.map((c, i) => (
+        <li key={c.rank} className="flex items-center gap-2.5 text-sm text-ink/75">
+          <span
+            className={`flex h-6 w-6 flex-none items-center justify-center rounded-full text-xs font-bold ${medalColor[i % medalColor.length]}`}
+          >
+            {c.rank}
+          </span>
+          <span className="font-medium">{c.name ?? 'Segera diumumkan'}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 function ChapterCard({ ch, reduce }: { ch: ChapterItem; reduce: boolean | null }) {
   const pamphlet = useResolvedUrl(ch.pamphletKey, ch.pamphlet)
@@ -41,21 +58,25 @@ function ChapterCard({ ch, reduce }: { ch: ChapterItem; reduce: boolean | null }
           </span>
 
           <div className="mt-4">
-            <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-ink/50">
-              <Trophy size={14} aria-hidden="true" /> Juara Umum
-            </p>
-            <ul className="mt-2 flex flex-col gap-2">
-              {(ch.champions ?? []).map((c, i) => (
-                <li key={c.rank} className="flex items-center gap-2.5 text-sm text-ink/75">
-                  <span
-                    className={`flex h-6 w-6 flex-none items-center justify-center rounded-full text-xs font-bold ${medalColor[i % medalColor.length]}`}
-                  >
-                    {c.rank}
-                  </span>
-                  <span className="font-medium">{c.name ?? 'Segera diumumkan'}</span>
-                </li>
-              ))}
-            </ul>
+            {ch.championGroups ? (
+              <div className="flex flex-col gap-4">
+                {ch.championGroups.map((g) => (
+                  <div key={g.level}>
+                    <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-ink/50">
+                      <Trophy size={14} aria-hidden="true" /> Juara Umum · {g.level}
+                    </p>
+                    <Podium champions={g.champions} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <>
+                <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-ink/50">
+                  <Trophy size={14} aria-hidden="true" /> Juara Umum
+                </p>
+                <Podium champions={ch.champions ?? []} />
+              </>
+            )}
           </div>
         </div>
       </div>

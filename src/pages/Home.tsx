@@ -1,11 +1,11 @@
-import { ExternalLink, FileText, Mail, GraduationCap, MessageCircle, ClipboardList } from 'lucide-react'
+import { ClipboardList, ExternalLink, FileText, GraduationCap, Mail, MessageCircle } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
-import { site } from '../data/siteContent'
-import { useSafeLink, waLink } from '../lib/links'
-import { useContent } from '../lib/content'
-import { Reveal, RevealItem } from '../components/Reveal'
-import HeroSection from '../components/HeroSection'
 import DocRow from '../components/DocRow'
+import HeroSection from '../components/HeroSection'
+import { Reveal, RevealItem } from '../components/Reveal'
+import { site } from '../data/siteContent'
+import { useContent } from '../lib/content'
+import { useSafeLink, waLink } from '../lib/links'
 
 const panelIconBg = ['bg-pink/30', 'bg-green-300/40']
 const submissionIcons = [Mail, ClipboardList]
@@ -72,7 +72,7 @@ export default function Home() {
           {[site.info.kegiatan, site.info.panduan].map((panel, idx) => (
             <RevealItem
               key={panel.title}
-              className="rounded-2xl border border-border-soft bg-white p-5 shadow-soft sm:p-6"
+              className="min-w-0 rounded-2xl border border-border-soft bg-white p-5 shadow-soft sm:p-6"
             >
               <div className="mb-4 flex items-center gap-3">
                 <span
@@ -103,7 +103,7 @@ export default function Home() {
           {site.scoring.map((level, idx) => (
             <RevealItem
               key={level.level}
-              className="rounded-2xl border border-border-soft bg-white p-5 shadow-soft sm:p-6"
+              className="min-w-0 rounded-2xl border border-border-soft bg-white p-5 shadow-soft sm:p-6"
             >
               <div className="mb-4 flex items-center gap-3">
                 <span
