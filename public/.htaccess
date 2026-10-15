@@ -1,0 +1,10 @@
+# SPA fallback for Apache / cPanel hosting (e.g. Jagoweb subdomain).
+# Routes like /profil, /sejarah, /admin resolve to index.html on refresh.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
