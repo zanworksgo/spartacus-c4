@@ -2,8 +2,8 @@ import { ArrowUpRight, FileText } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import type { DocItem } from '../data/siteContent'
 import { useResolvedUrl } from '../lib/content'
-import { useToast } from './ToastProvider'
 import { useDocViewer } from './DocViewer'
+import { useToast } from './ToastProvider'
 
 /**
  * A clickable document row. Clicking opens an in-app viewer (preview + download).

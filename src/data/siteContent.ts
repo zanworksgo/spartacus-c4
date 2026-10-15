@@ -170,9 +170,11 @@ export const site = {
     profil: {
         title: 'Profil SPARTACUS',
         description: [
-            'SPARTACUS — Semangat Paskibra Tangguh, Cerdas, Unggul, dan Sportivitas — adalah ajang lomba Paskibra antar sekolah yang diselenggarakan oleh Paskibra Unit 101 SMA Negeri 1 Jeneponto.',
-            'Lebih dari sekadar kompetisi, SPARTACUS menjadi panggung bagi setiap peserta untuk menempa kedisiplinan, kekompakan, kreativitas, dan sportivitas — nilai-nilai yang menjadi fondasi seorang Paskibra sejati.',
-            'Setiap chapter menghadirkan semangat baru, mempertemukan sekolah-sekolah terbaik dalam satu panggung penuh kebanggaan, persaudaraan, dan prestasi.',
+            'SPARTACUS merupakan ajang perlombaan Paskibra antar sekolah yang diselenggarakan oleh Paskibra Unit 101 SMA Negeri 1 Jeneponto, dengan cakupan kegiatan tingkat kabupaten maupun provinsi. Mengusung nama Semangat Paskibra Tangguh, Cerdas, Unggul, dan Sportivitas yang disingkat menjadi SPARTACUS, SPARTACUS menjadi ruang bagi generasi muda untuk menunjukkan kemampuan, mengembangkan kreativitas, serta membangun persaudaraan antarsekolah melalui kompetisi.',
+
+            'Sejak tahun 2022 pertama kali diselenggarakan, SPARTACUS terus dikembangkan dari satu chapter ke chapter berikutnya. Setiap penyelenggaraan menjadi bagian dari perjalanan untuk menghadirkan perlombaan yang lebih terarah, pengalaman yang berkesan, serta ruang prestasi yang semakin luas bagi para peserta.',
+
+            'Memasuki Chapter 4, SPARTACUS membawa semangat untuk melanjutkan perjalanan tersebut dengan menjunjung kedisiplinan, kekompakan, dan penghargaan terhadap setiap proses. Melalui beragam mata lomba, peserta diajak mengasah keterampilan, menumbuhkan kepercayaan diri, dan membawa nama sekolah dengan penuh tanggung jawab.',
         ],
     },
 
@@ -222,7 +224,7 @@ export const site = {
                         level: 'SMP/MTs',
                         champions: [
                             { rank: 1, name: 'MTs Negeri 2 Jeneponto' },
-                            { rank: 2, name: 'SMP Negeri 2 Parangloe' },
+                            { rank: 2, name: 'SMP Negeri 1 Parangloe' },
                             { rank: 3, name: 'SMP Negeri 1 Binamu' },
                         ],
                     },

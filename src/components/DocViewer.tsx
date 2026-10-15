@@ -1,7 +1,7 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react'
-import type { ReactNode } from 'react'
+import { Download, ExternalLink, FileText, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Download, ExternalLink, X, FileText } from 'lucide-react'
+import type { ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useState } from 'react'
 
 export interface DocRef {
   title: string
