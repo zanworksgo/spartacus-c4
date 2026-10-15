@@ -170,11 +170,11 @@ export const site = {
     profil: {
         title: 'Profil SPARTACUS',
         description: [
-            'SPARTACUS merupakan ajang perlombaan Paskibra antar sekolah yang diselenggarakan oleh Paskibra Unit 101 SMA Negeri 1 Jeneponto, dengan cakupan kegiatan tingkat kabupaten maupun provinsi. Mengusung nama Semangat Paskibra Tangguh, Cerdas, Unggul, dan Sportivitas yang disingkat menjadi SPARTACUS, SPARTACUS menjadi ruang bagi generasi muda untuk menunjukkan kemampuan, mengembangkan kreativitas, serta membangun persaudaraan antarsekolah melalui kompetisi.',
+            'SPARTACUS merupakan ajang perlombaan Paskibra antarsekolah yang diselenggarakan oleh Paskibra Unit 101 SMA Negeri 1 Jeneponto pada tingkat kabupaten maupun provinsi. Nama SPARTACUS merupakan singkatan dari Semangat Paskibra Tangguh, Cerdas, Unggul, dan Sportivitas. Kegiatan ini menjadi wadah bagi generasi muda untuk mengembangkan kemampuan, menyalurkan kreativitas, serta mempererat persaudaraan antarsekolah melalui kompetisi.',
 
-            'Sejak tahun 2022 pertama kali diselenggarakan, SPARTACUS terus dikembangkan dari satu chapter ke chapter berikutnya. Setiap penyelenggaraan menjadi bagian dari perjalanan untuk menghadirkan perlombaan yang lebih terarah, pengalaman yang berkesan, serta ruang prestasi yang semakin luas bagi para peserta.',
+            'Perjalanan SPARTACUS dimulai pada tahun 2022, dilanjutkan dengan Chapter 2 pada tahun 2024 dan Chapter 3 pada awal tahun 2026. Setiap chapter menjadi kesempatan untuk mengevaluasi dan meningkatkan kualitas penyelenggaraan, sekaligus menghadirkan pengalaman serta ruang berprestasi bagi para peserta.',
 
-            'Memasuki Chapter 4, SPARTACUS membawa semangat untuk melanjutkan perjalanan tersebut dengan menjunjung kedisiplinan, kekompakan, dan penghargaan terhadap setiap proses. Melalui beragam mata lomba, peserta diajak mengasah keterampilan, menumbuhkan kepercayaan diri, dan membawa nama sekolah dengan penuh tanggung jawab.',
+            'Memasuki Chapter 4, SPARTACUS melanjutkan komitmennya untuk menghadirkan kompetisi yang menjunjung kedisiplinan, kekompakan, kreativitas, dan sportivitas. Melalui beragam mata lomba, peserta diharapkan mampu mengasah keterampilan, membangun kepercayaan diri, serta menunjukkan prestasi terbaik setiap proses yang dilalui.',
         ],
     },
 
@@ -184,7 +184,7 @@ export const site = {
             {
                 chapter: 'Chapter 1',
                 label: 'SPARTACUS Chapter 1',
-                date: null,
+                date: '07 - 09 Oktober 2022',
                 pamphlet: null,
                 pamphletKey: 'pamflet-ch1',
                 champions: [
