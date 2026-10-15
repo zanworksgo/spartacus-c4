@@ -96,6 +96,8 @@ export const site = {
     assets: {
         /** Path to a logo image in /public, or null to use the text wordmark. */
         logo: '/logo.png' as string | null,
+        /** Combined logo strip shown at the far left of the navbar. */
+        navLogo: '/logo-semua.png' as string | null,
         /** Path to a hero illustration image in /public, or null to use the built-in SVG artwork. */
         hero: '/hero.png' as string | null,
     },
@@ -103,7 +105,7 @@ export const site = {
     nav: [
         { label: 'Beranda', href: '/#' },
         { label: 'Profil', href: '/profil' },
-        { label: 'Sejarah', href: '/sejarah' },
+        { label: 'Jejak', href: '/sejarah' },
         { label: 'Kontak', href: '/#kontak' },
     ] as NavItem[],
 
@@ -127,7 +129,7 @@ export const site = {
         kegiatan: {
             title: 'Informasi Kegiatan',
             items: [
-                { title: 'Pamflet Chapter 4', url: null, key: 'pamflet-ch4' },
+                { title: 'Pamflet Lomba', url: null, key: 'pamflet-ch4' },
                 { title: 'Surat Rekomendasi', url: null, key: 'surat-rekomendasi' },
                 { title: 'Juklak & Juknis', url: null, key: 'juklak-juknis' },
             ],
@@ -219,9 +221,9 @@ export const site = {
                     {
                         level: 'SMP/MTs',
                         champions: [
-                            { rank: 1, name: null },
-                            { rank: 2, name: null },
-                            { rank: 3, name: null },
+                            { rank: 1, name: 'MTs Negeri 2 Jeneponto' },
+                            { rank: 2, name: 'SMP Negeri 2 Parangloe' },
+                            { rank: 3, name: 'SMP Negeri 1 Binamu' },
                         ],
                     },
                 ],

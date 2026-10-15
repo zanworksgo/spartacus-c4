@@ -5,15 +5,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { site } from '../data/siteContent'
 
 function Wordmark() {
-  const [logoOk, setLogoOk] = useState(Boolean(site.assets.logo))
-  if (site.assets.logo && logoOk) {
+  const [logoOk, setLogoOk] = useState(Boolean(site.assets.navLogo))
+  if (site.assets.navLogo && logoOk) {
     return (
       <img
-        src={site.assets.logo}
+        src={site.assets.navLogo}
         alt={`${site.identity.name} ${site.identity.chapter}`}
-        width={48}
-        height={48}
-        className="h-11 w-auto sm:h-12"
+        width={2172}
+        height={724}
+        className="h-14 w-auto max-w-[60vw] object-contain object-left sm:h-16 lg:h-[72px]"
         onError={() => setLogoOk(false)}
       />
     )
@@ -89,7 +89,7 @@ export default function Navbar() {
           : 'border-b border-transparent bg-cream/0'
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:px-6">
         <Link to="/" aria-label={`${site.identity.name} ${site.identity.chapter} — Beranda`}>
           <Wordmark />
         </Link>

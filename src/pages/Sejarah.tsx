@@ -1,7 +1,7 @@
 import { Calendar, Flag, ImageOff, Trophy } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Reveal, RevealItem } from '../components/Reveal'
-import type { ChapterItem, Champion } from '../data/siteContent'
+import type { Champion, ChapterItem } from '../data/siteContent'
 import { site } from '../data/siteContent'
 import { useResolvedUrl } from '../lib/content'
 

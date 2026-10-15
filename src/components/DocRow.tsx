@@ -1,16 +1,18 @@
-import { ArrowUpRight, Download, FileText } from 'lucide-react'
+import { ArrowUpRight, FileText } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import type { DocItem } from '../data/siteContent'
 import { useResolvedUrl } from '../lib/content'
-import { useSafeLink } from '../lib/links'
+import { useToast } from './ToastProvider'
+import { useDocViewer } from './DocViewer'
 
 /**
- * A clickable document row. Items with a single `url` open on row click.
- * Items with `word`/`pdf` formats show two download buttons instead.
+ * A clickable document row. Clicking opens an in-app viewer (preview + download).
+ * Items with `word`/`pdf` formats show two buttons instead.
  * Backend-managed uploads (via slot keys) override the static values.
  */
 export default function DocRow({ item }: { item: DocItem }) {
-  const openLink = useSafeLink()
+  const { notify } = useToast()
+  const { view } = useDocViewer()
   const reduce = useReducedMotion()
   const url = useResolvedUrl(item.key, item.url)
   const word = useResolvedUrl(item.wordKey, item.word)
@@ -20,6 +22,14 @@ export default function DocRow({ item }: { item: DocItem }) {
     item.pdfKey !== undefined ||
     item.word !== undefined ||
     item.pdf !== undefined
+
+  const open = (u: string | null, label: string, message: string) => {
+    if (!u) {
+      notify(message)
+      return
+    }
+    view({ title: label, url: u })
+  }
 
   if (hasFormats) {
     const anyAvailable = Boolean(word) || Boolean(pdf)
@@ -39,8 +49,14 @@ export default function DocRow({ item }: { item: DocItem }) {
           </span>
         </div>
         <span className="flex gap-2 sm:flex-none">
-          <FormatButton label="Word" url={word} onOpen={openLink} />
-          <FormatButton label="PDF" url={pdf} onOpen={openLink} />
+          <FormatButton
+            label="Word"
+            onClick={() => open(word, `${item.title} (Word)`, 'Berkas Word belum tersedia')}
+          />
+          <FormatButton
+            label="PDF"
+            onClick={() => open(pdf, `${item.title} (PDF)`, 'Berkas PDF belum tersedia')}
+          />
         </span>
       </div>
     )
@@ -50,7 +66,7 @@ export default function DocRow({ item }: { item: DocItem }) {
   return (
     <motion.button
       type="button"
-      onClick={() => openLink(url, 'Berkas belum tersedia')}
+      onClick={() => open(url, item.title, 'Berkas belum tersedia')}
       whileHover={reduce ? undefined : { y: -2 }}
       whileTap={{ scale: 0.99 }}
       className="group flex min-h-[56px] w-full items-center gap-3 rounded-xl border border-border-soft bg-cream px-4 py-3 text-left transition-colors hover:border-green-600/50 hover:bg-green-900/[0.03]"
@@ -75,23 +91,15 @@ export default function DocRow({ item }: { item: DocItem }) {
   )
 }
 
-function FormatButton({
-  label,
-  url,
-  onOpen,
-}: {
-  label: string
-  url: string | null
-  onOpen: (url: string | null, message?: string) => void
-}) {
+function FormatButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (
     <button
       type="button"
-      onClick={() => onOpen(url, `Berkas ${label} belum tersedia`)}
-      aria-label={`Unduh ${label}`}
+      onClick={onClick}
+      aria-label={`Lihat ${label}`}
       className="inline-flex min-h-[36px] flex-1 items-center justify-center gap-1.5 rounded-lg border border-border-soft px-3 text-xs font-semibold text-green-900 transition-colors hover:border-green-600/60 hover:bg-green-900/[0.04] sm:flex-none sm:justify-start"
     >
-      <Download size={15} />
+      <FileText size={15} />
       {label}
     </button>
   )
