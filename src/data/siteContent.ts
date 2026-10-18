@@ -163,7 +163,12 @@ export const site = {
     ] as ScoringLevel[],
 
     contacts: [
-        { label: 'Kontak Panitia 1', name: 'Panitia 1', whatsapp: null },
+        {
+            label: 'Kontak Panitia 1',
+            name: 'Panitia 1',
+            whatsapp: '6285151263208',
+            message: 'Halo, Kak. Saya ingin bertanya mengenai SPARTACUS Chapter 4, khususnya terkait informasi lomba dan pendaftaran peserta. Mohon informasi lebih lanjutnya. Terima kasih.'
+        },
         { label: 'Kontak Panitia 2', name: 'Panitia 2', whatsapp: null },
     ] as ContactPerson[],
 
