@@ -197,8 +197,8 @@ export const site = {
                 pamphletKey: 'pamflet-ch1',
                 champions: [
                     { rank: 1, name: 'SMA NEGERI 6 JENEPONTO' },
-                    { rank: 2, name: null },
-                    { rank: 3, name: null },
+                    { rank: 2, name: 'SMA NEGERI 2 JENEPONTO' },
+                    { rank: 3, name: 'SMA AL - BAHRA JENEPONTO' },
                 ],
             },
             {
