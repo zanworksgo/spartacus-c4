@@ -24,7 +24,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <Reveal className="mb-8">
           <h2 className="text-2xl font-extrabold tracking-tight text-green-900 sm:text-3xl">
-            Pengajuan Sekolah
+            Pengajuan & Pendaftaran Sekolah
           </h2>
         </Reveal>
         <Reveal stagger className="grid gap-5 sm:grid-cols-2">

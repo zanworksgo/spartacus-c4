@@ -41,6 +41,7 @@ export const adminGroups: AdminGroup[] = [
       { key: 'nilai-sma-khusus', label: 'Lomba Khusus', type: 'file', accept: DOC_ACCEPT },
       { key: 'nilai-sma-umum', label: 'Lomba Umum', type: 'file', accept: DOC_ACCEPT },
       { key: 'nilai-sma-seni', label: 'Lomba Seni', type: 'file', accept: DOC_ACCEPT },
+      { key: 'nilai-sma-eksebisi', label: 'Lomba Eksebisi', type: 'file', accept: DOC_ACCEPT },
     ],
   },
   {
@@ -49,6 +50,7 @@ export const adminGroups: AdminGroup[] = [
       { key: 'nilai-smp-khusus', label: 'Lomba Khusus', type: 'file', accept: DOC_ACCEPT },
       { key: 'nilai-smp-umum', label: 'Lomba Umum', type: 'file', accept: DOC_ACCEPT },
       { key: 'nilai-smp-seni', label: 'Lomba Seni', type: 'file', accept: DOC_ACCEPT },
+      { key: 'nilai-smp-eksebisi', label: 'Lomba Eksebisi', type: 'file', accept: DOC_ACCEPT },
     ],
   },
   {

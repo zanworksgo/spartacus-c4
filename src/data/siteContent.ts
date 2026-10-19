@@ -152,6 +152,7 @@ export const site = {
                 { title: 'Lomba Khusus', url: null, key: 'nilai-sma-khusus' },
                 { title: 'Lomba Umum', url: null, key: 'nilai-sma-umum' },
                 { title: 'Lomba Seni', url: null, key: 'nilai-sma-seni' },
+                { title: 'Lomba Eksebisi', url: null, key: 'nilai-sma-eksebisi' },
             ],
         },
         {
@@ -160,6 +161,7 @@ export const site = {
                 { title: 'Lomba Khusus', url: null, key: 'nilai-smp-khusus' },
                 { title: 'Lomba Umum', url: null, key: 'nilai-smp-umum' },
                 { title: 'Lomba Seni', url: null, key: 'nilai-smp-seni' },
+                { title: 'Lomba Eksebisi', url: null, key: 'nilai-smp-eksebisi' },
             ],
         },
     ] as ScoringLevel[],
