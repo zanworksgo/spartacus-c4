@@ -82,6 +82,8 @@ export interface ContactPerson {
     name: string
     /** WhatsApp number in international format without "+" (e.g. "628xx"), or null. */
     whatsapp: string | null
+    /** Optional message prefilled in the WhatsApp chat. */
+    message?: string
 }
 
 export const site = {
@@ -164,12 +166,11 @@ export const site = {
 
     contacts: [
         {
-            label: 'Kontak Panitia 1',
+            label: 'Kontak Panitia',
             name: 'Panitia 1',
             whatsapp: '6285151263208',
             message: 'Halo, Kak. Saya ingin bertanya mengenai SPARTACUS Chapter 4, khususnya terkait informasi lomba dan pendaftaran peserta. Mohon informasi lebih lanjutnya. Terima kasih.'
         },
-        { label: 'Kontak Panitia 2', name: 'Panitia 2', whatsapp: null },
     ] as ContactPerson[],
 
     profil: {

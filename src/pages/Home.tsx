@@ -130,12 +130,12 @@ export default function Home() {
             Kontak Panitia
           </h2>
         </Reveal>
-        <Reveal stagger className="grid gap-5 sm:grid-cols-2">
+        <Reveal stagger className={`grid gap-5 ${site.contacts.length > 1 ? 'sm:grid-cols-2' : ''}`}>
           {site.contacts.map((contact) => (
             <RevealItem key={contact.label}>
               <motion.button
                 type="button"
-                onClick={() => openLink(waLink(contact.whatsapp), 'Kontak belum tersedia')}
+                onClick={() => openLink(waLink(contact.whatsapp, contact.message), 'Kontak belum tersedia')}
                 whileHover={reduce ? undefined : { y: -2 }}
                 whileTap={{ scale: 0.99 }}
                 className="group flex min-h-[64px] w-full items-center gap-4 rounded-2xl border border-border-soft bg-white px-6 py-4 text-left shadow-soft transition-colors hover:border-green-600/50"

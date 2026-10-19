@@ -16,9 +16,10 @@ export function useSafeLink() {
   }
 }
 
-/** Build a wa.me URL from a plain international number (no "+"). */
-export function waLink(whatsapp: string | null): string | null {
+/** Build a wa.me URL from a plain international number (no "+"), with optional prefilled text. */
+export function waLink(whatsapp: string | null, message?: string): string | null {
   if (!whatsapp) return null
   const digits = whatsapp.replace(/[^\d]/g, '')
-  return digits ? `https://wa.me/${digits}` : null
+  if (!digits) return null
+  return message ? `https://wa.me/${digits}?text=${encodeURIComponent(message)}` : `https://wa.me/${digits}`
 }
