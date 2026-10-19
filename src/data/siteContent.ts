@@ -196,9 +196,9 @@ export const site = {
                 pamphlet: null,
                 pamphletKey: 'pamflet-ch1',
                 champions: [
-                    { rank: 1, name: 'SMA NEGERI 6 JENEPONTO' },
-                    { rank: 2, name: 'SMA NEGERI 2 JENEPONTO' },
-                    { rank: 3, name: 'SMA AL - BAHRA JENEPONTO' },
+                    { rank: 1, name: 'SMA Negeri 6 Jeneponto' },
+                    { rank: 2, name: 'SMA Negeri 2 Jeneponto' },
+                    { rank: 3, name: 'SMA Al - Bahra Jeneponto' },
                 ],
             },
             {
