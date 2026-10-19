@@ -6,12 +6,12 @@ import type { AdminSlot } from '../data/adminSlots'
 import { adminGroups } from '../data/adminSlots'
 import { useContent } from '../lib/content'
 import {
-    adminEmail,
-    isSupabaseConfigured,
-    removeContent,
-    setLink,
-    supabase,
-    uploadDocument,
+  adminEmail,
+  isSupabaseConfigured,
+  removeContent,
+  setLink,
+  supabase,
+  uploadDocument,
 } from '../lib/supabase'
 
 export default function Admin() {

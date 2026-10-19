@@ -247,7 +247,8 @@ export const site = {
     },
 
     footer: {
-        copyright: 'Copyright by Farhan',
+        copyright: '© 2026',
+        developer: { label: 'Developed by', name: 'Farhan', url: 'https://fauzanazhari.vercel.app' },
     },
 }
 
