@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import DocRow from '../components/DocRow'
 import HeroSection from '../components/HeroSection'
 import { Reveal, RevealItem } from '../components/Reveal'
+import Timeline from '../components/Timeline'
 import { site } from '../data/siteContent'
 import { useContent } from '../lib/content'
 import { useSafeLink, waLink } from '../lib/links'
@@ -60,6 +61,9 @@ export default function Home() {
           })}
         </Reveal>
       </section>
+
+      {/* B2. Roadmap / Timeline Kegiatan */}
+      <Timeline />
 
       {/* C. Informasi & Berkas */}
       <section id="informasi" className="mx-auto max-w-6xl px-4 py-12 sm:px-6">

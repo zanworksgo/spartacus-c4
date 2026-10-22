@@ -86,6 +86,19 @@ export interface ContactPerson {
     message?: string
 }
 
+export interface TimelineStep {
+    /** Short stage title, e.g. "Pendaftaran". */
+    title: string
+    /** Human-readable schedule, e.g. "14 November 2026". */
+    date: string
+    /** Optional supporting note shown under the date. */
+    note?: string
+    /** Lucide icon name used to render the stage marker. */
+    icon: 'ClipboardList' | 'Users' | 'ClipboardCheck' | 'Trophy'
+    /** Lifecycle state used for styling the marker. */
+    status: 'done' | 'active' | 'upcoming'
+}
+
 export const site = {
     identity: {
         unitLabel: 'PASKIBRA UNIT 101 SMA NEGERI 1 JENEPONTO',
@@ -106,6 +119,7 @@ export const site = {
 
     nav: [
         { label: 'Beranda', href: '/#' },
+        { label: 'Timeline', href: '/#timeline' },
         { label: 'Profil', href: '/profil' },
         { label: 'Jejak', href: '/sejarah' },
         { label: 'Kontak', href: '/#kontak' },
@@ -126,6 +140,35 @@ export const site = {
             key: 'form-kontingen',
         },
     ] as SubmissionItem[],
+
+    /** Event roadmap shown as an animated timeline on the home page. */
+    timeline: [
+        {
+            title: 'Pendaftaran',
+            date: '20 Oktober 2026 - Slot terpenuhi',
+            note: 'Dibuka hingga slot terpenuhi',
+            icon: 'ClipboardList',
+            status: 'upcoming',
+        },
+        {
+            title: 'Technical Meeting 1',
+            date: '14 November 2026',
+            icon: 'Users',
+            status: 'upcoming',
+        },
+        {
+            title: 'Technical Meeting 2',
+            date: '12 Desember 2026',
+            icon: 'ClipboardCheck',
+            status: 'upcoming',
+        },
+        {
+            title: 'Pelaksanaan Lomba',
+            date: '03 - 08 Januari 2027',
+            icon: 'Trophy',
+            status: 'upcoming',
+        },
+    ] as TimelineStep[],
 
     info: {
         kegiatan: {
