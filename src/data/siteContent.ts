@@ -168,10 +168,16 @@ export const site = {
 
     contacts: [
         {
-            label: 'Kontak Panitia',
-            name: 'Panitia 1',
+            label: 'Registrasi Peserta',
+            name: 'Registrasi Peserta',
             whatsapp: '6285151263208',
             message: 'Halo, Kak. Saya ingin bertanya mengenai SPARTACUS Chapter 4, khususnya terkait informasi lomba dan pendaftaran peserta. Mohon informasi lebih lanjutnya. Terima kasih.'
+        },
+        {
+            label: 'Boby Prakasi',
+            name: 'Boby Prakasi',
+            whatsapp: '6285824750537',
+            message: 'Halo, Kak Boby. Saya ingin bertanya mengenai SPARTACUS Chapter 4. Mohon informasi lebih lanjutnya. Terima kasih.'
         },
     ] as ContactPerson[],
 
