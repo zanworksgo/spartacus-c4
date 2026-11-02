@@ -21,7 +21,7 @@ Agar berkas & pamflet bisa diunggah/diganti tanpa mengubah kode, situs mendukung
 Langkah setup:
 
 1. Buat project gratis di [supabase.com](https://supabase.com).
-2. Di **SQL Editor**, jalankan isi [`supabase/setup.sql`](supabase/setup.sql) (membuat tabel `site_content`, bucket storage `documents`, dan policy-nya).
+2. Di **SQL Editor**, jalankan isi [`supabase/setup.sql`](supabase/setup.sql) (membuat tabel `web-profil`, bucket storage `documents`, dan policy-nya).
 3. Buat akun admin: **Authentication → Users → Add user**, isi email (sama dengan `VITE_ADMIN_EMAIL`), set password, aktifkan **Auto Confirm User**.
 4. Salin `.env.example` menjadi `.env`, lalu isi:
    - `VITE_SUPABASE_URL` dan `VITE_SUPABASE_ANON_KEY` dari **Project Settings → API**.

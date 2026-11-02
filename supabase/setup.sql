@@ -2,7 +2,8 @@
 -- Run this once in the Supabase SQL Editor (Dashboard → SQL → New query).
 
 -- 1) Content table: one row per managed slot (file upload or link).
-create table if not exists public.site_content (
+-- Note: the table name contains a hyphen, so it must always be quoted.
+create table if not exists public."web-profil" (
   key text primary key,
   type text not null check (type in ('file', 'link')),
   url text,
@@ -10,23 +11,23 @@ create table if not exists public.site_content (
   updated_at timestamptz default now()
 );
 
-alter table public.site_content enable row level security;
+alter table public."web-profil" enable row level security;
 
 -- Public can read; only logged-in admin can write.
-drop policy if exists "site_content read" on public.site_content;
-create policy "site_content read" on public.site_content
+drop policy if exists "web-profil read" on public."web-profil";
+create policy "web-profil read" on public."web-profil"
   for select using (true);
 
-drop policy if exists "site_content insert" on public.site_content;
-create policy "site_content insert" on public.site_content
+drop policy if exists "web-profil insert" on public."web-profil";
+create policy "web-profil insert" on public."web-profil"
   for insert to authenticated with check (true);
 
-drop policy if exists "site_content update" on public.site_content;
-create policy "site_content update" on public.site_content
+drop policy if exists "web-profil update" on public."web-profil";
+create policy "web-profil update" on public."web-profil"
   for update to authenticated using (true) with check (true);
 
-drop policy if exists "site_content delete" on public.site_content;
-create policy "site_content delete" on public.site_content
+drop policy if exists "web-profil delete" on public."web-profil";
+create policy "web-profil delete" on public."web-profil"
   for delete to authenticated using (true);
 
 -- 2) Public storage bucket for uploaded documents.

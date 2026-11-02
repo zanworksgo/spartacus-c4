@@ -16,6 +16,9 @@ export const supabase: SupabaseClient | null = isSupabaseConfigured
 /** Public storage bucket that holds uploaded documents. */
 export const BUCKET = 'documents'
 
+/** Table that holds managed content rows (renamed from site_content). */
+export const CONTENT_TABLE = 'web-profil'
+
 export interface ContentRow {
   key: string
   type: 'file' | 'link'
@@ -27,7 +30,7 @@ export interface ContentRow {
 /** Load all managed content rows, keyed by slot id. Returns {} when unconfigured. */
 export async function fetchContentMap(): Promise<Record<string, ContentRow>> {
   if (!supabase) return {}
-  const { data, error } = await supabase.from('site_content').select('*')
+  const { data, error } = await supabase.from(CONTENT_TABLE).select('*')
   if (error || !data) return {}
   const map: Record<string, ContentRow> = {}
   for (const row of data as ContentRow[]) map[row.key] = row
@@ -47,7 +50,7 @@ export async function uploadDocument(key: string, file: File): Promise<ContentRo
   const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(path)
   const row: ContentRow = { key, type: 'file', url: pub.publicUrl, filename: file.name }
   const { error: dbErr } = await supabase
-    .from('site_content')
+    .from(CONTENT_TABLE)
     .upsert({ ...row, updated_at: new Date().toISOString() })
   if (dbErr) throw dbErr
   return row
@@ -58,7 +61,7 @@ export async function setLink(key: string, linkUrl: string): Promise<ContentRow>
   if (!supabase) throw new Error('Backend belum dikonfigurasi.')
   const row: ContentRow = { key, type: 'link', url: linkUrl.trim() || null, filename: null }
   const { error } = await supabase
-    .from('site_content')
+    .from(CONTENT_TABLE)
     .upsert({ ...row, updated_at: new Date().toISOString() })
   if (error) throw error
   return row
@@ -67,7 +70,7 @@ export async function setLink(key: string, linkUrl: string): Promise<ContentRow>
 /** Remove a slot's content row (the stored file blob is left in the bucket). */
 export async function removeContent(key: string): Promise<void> {
   if (!supabase) throw new Error('Backend belum dikonfigurasi.')
-  const { error } = await supabase.from('site_content').delete().eq('key', key)
+  const { error } = await supabase.from(CONTENT_TABLE).delete().eq('key', key)
   if (error) throw error
 }
 
