@@ -152,7 +152,7 @@ export const site = {
         },
         {
             title: 'Technical Meeting 1',
-            date: '14 November 2026',
+            date: '21 November 2026',
             icon: 'Users',
             status: 'upcoming',
         },
